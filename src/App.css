@@ -1,0 +1,228 @@
+/* ============================================
+   CSS Custom Properties
+   ============================================ */
+:root {
+  /* Colors - Neutrals */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-500: #6b7280;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+
+  /* Colors - Primary */
+  --indigo-500: #6366f1;
+  --indigo-600: #4f46e5;
+  --indigo-700: #4338ca;
+
+  /* Colors - Accent */
+  --teal-500: #14b8a6;
+  --teal-600: #0d9488;
+  --green-400: #4ade80;
+  --green-600: #059669;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --yellow-300: #fcd34d;
+  --purple-500: #a855f7;
+  --red-100: #fee2e2;
+  --red-500: #ef4444;
+  --red-700: #b91c1c;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --ring-indigo: 0 0 0 3px rgba(99, 102, 241, 0.5);
+
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+
+  /* Font Sizes - Only 3 sizes */
+  --font-small: 1rem;     /* 16px - 2*8px */
+  --font-medium: 1.25rem; /* 20px - 5*4px */
+  --font-large: 1.5rem;    /* 24px - 3*8px */
+}
+
+/* ============================================
+   Layout & Container
+   ============================================ */
+.app-container {
+  min-height: 100vh;
+  background-color: var(--gray-100);
+  padding: 3rem 4rem; /* 48px 64px */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.main-content {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main-title {
+  font-size: var(--font-large); /* 24px */
+  font-weight: 800;
+  color: var(--gray-800);
+  margin-bottom: 1.5rem; /* 24px */
+  padding-bottom: 0.5rem; /* 8px */
+  border-bottom: 1px solid var(--gray-200);
+}
+
+@media (min-width: 640px) {
+  .main-title {
+    font-size: 2rem; /* 32px - 4*8px */
+  }
+}
+
+/* ============================================
+   Cards
+   ============================================ */
+.config-card,
+.output-card {
+  background-color: white;
+  padding: 1.5rem; /* 24px */
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  margin-bottom: 2rem; /* 32px */
+}
+
+.config-title {
+  font-size: var(--font-large); /* 24px */
+  font-weight: 600;
+  color: var(--indigo-600);
+  margin-bottom: 1rem; /* 16px */
+}
+
+/* ============================================
+   Flex Layouts
+   ============================================ */
+.flex-row-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; /* 24px */
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem; /* 12px */
+}
+
+/* ============================================
+   Form Elements
+   ============================================ */
+.input-wrapper {
+  flex: 1;
+  width: 100%;
+}
+
+.input-label {
+  display: block;
+  font-size: var(--font-small); /* 12px */
+  font-weight: 500;
+  color: var(--gray-700);
+  margin-bottom: 0.25rem; /* 4px */
+}
+
+.input-group {
+  margin-bottom: 0.75rem; /* 12px */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="number"] {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  padding: 0.5rem 0.75rem; /* 8px 12px */
+  font-size: var(--font-medium); /* 16px */
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--indigo-500);
+  box-shadow: var(--ring-indigo);
+}
+
+/* ============================================
+   Home Page
+   ============================================ */
+.game-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.game-card {
+  padding: 1.5rem; /* 24px */
+  background-color: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  border: 2px solid transparent;
+}
+
+.game-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
+  border-color: var(--indigo-500);
+}
+
+.game-card-title {
+  font-size: var(--font-large); /* 24px */
+  font-weight: 700;
+  color: var(--indigo-600);
+  margin-bottom: 0.75rem; /* 12px */
+}
+
+.game-card-description {
+  color: var(--gray-700);
+  font-size: var(--font-medium); /* 16px */
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================================
+   Responsive Breakpoints
+   ============================================ */
+@media (min-width: 640px) {
+  .app-container {
+    padding: 4rem 6rem; /* 64px 96px */
+  }
+
+  .flex-row-container {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .app-container {
+    padding: 5rem 8rem; /* 80px 128px */
+  }
+}
+
+@media (min-width: 1280px) {
+  .app-container {
+    padding: 6rem 10rem; /* 96px 160px */
+  }
+}
+
+@media (max-width: 639px) {
+  .app-container {
+    padding: 2rem 1.5rem; /* 32px 24px */
+  }
+}

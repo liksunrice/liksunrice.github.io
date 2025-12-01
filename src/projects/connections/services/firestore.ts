@@ -7,7 +7,7 @@ import {
   serverTimestamp,
 } from 'firebase/firestore';
 import { db } from '../config/firebase';
-import type { Groups, Group } from '../types';
+import type { Groups } from '../types';
 
 // Saved game format (without computed items array)
 interface SavedGroup {

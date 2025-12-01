@@ -1,5 +1,5 @@
 import React from 'react';
-import type { PlayableItemGridProps, ItemState, ConnectionGroups } from '../types';
+import type { PlayableItemGridProps, ItemState } from '../types';
 import { GROUP_MAP } from '../constants';
 
 const PlayableItemGrid: React.FC<PlayableItemGridProps> = ({
@@ -33,7 +33,6 @@ const PlayableItemGrid: React.FC<PlayableItemGridProps> = ({
   };
 
   const canSubmit = gameState.selectedItems.length === 4;
-  const isGameOver = gameState.isGameWon || !gameState.isGameActive;
 
   return (
     <div>

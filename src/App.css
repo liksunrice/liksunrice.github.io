@@ -1,6 +1,4 @@
-/* ============================================
-   CSS Custom Properties
-   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
 :root {
   /* Colors - Neutrals */
   --gray-50: #f9fafb;
@@ -47,19 +45,142 @@
   --transition-normal: 0.3s ease-in-out;
 
   /* Font Sizes - Only 3 sizes */
-  --font-small: 1rem;     /* 16px - 2*8px */
-  --font-medium: 1.25rem; /* 20px - 5*4px */
-  --font-large: 1.5rem;    /* 24px - 3*8px */
+  --font-small: 1rem;
+  --font-medium: 1.25rem;
+  --font-large: 2rem;
 }
 
 /* ============================================
    Layout & Container
    ============================================ */
+
+.home-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray-100);
+  min-height: 100vh;
+  width: 100%;
+}
+
+.home-title {
+  font-size: 3rem;
+  font-weight:300;
+  color: var(--indigo-700);
+  text-align: center;
+}
+
+.home-title-footer {
+  color: var(--gray-500);
+  font-size: 2.75vmin;
+  margin-top: -1.5rem;
+}
+
+.home-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  color: var(--gray-700);
+  font-size: var(--font-medium);
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dropdown-toggle:hover {
+  color: var(--indigo-600);
+  background-color: var(--gray-200);
+}
+
+.dropdown-arrow {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease-in-out;
+  display: inline-block;
+  color: var(--gray-500);
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.dropdown:hover .dropdown-arrow {
+  color: var(--indigo-600);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  background-color: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  min-width: 200px;
+  padding: 0.5rem 0;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.dropdown-menu.opening {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-8px);
+  animation: slideDown 0.4s ease-in-out forwards;
+}
+
+.dropdown-menu.closing {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-8px);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.dropdown-item {
+  display: block;
+  color: var(--gray-700);
+  font-size: var(--font-small);
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  transition: all var(--transition-fast);
+}
+
+.dropdown-item:hover {
+  color: var(--indigo-600);
+  background-color: var(--gray-100);
+}
+
 .app-container {
   min-height: 100vh;
   background-color: var(--gray-100);
-  padding: 3rem 4rem; /* 48px 64px */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  padding: 3rem 4rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 .main-content {
@@ -68,18 +189,19 @@
   margin: 0 auto;
 }
 
+
 .main-title {
-  font-size: var(--font-large); /* 24px */
+  font-size: var(--font-large);
   font-weight: 800;
-  color: var(--gray-800);
-  margin-bottom: 1.5rem; /* 24px */
-  padding-bottom: 0.5rem; /* 8px */
+  color: var(--indigo-700);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem; 
   border-bottom: 1px solid var(--gray-200);
 }
 
 @media (min-width: 640px) {
   .main-title {
-    font-size: 2rem; /* 32px - 4*8px */
+    font-size: 3rem; 
   }
 }
 
@@ -89,17 +211,18 @@
 .config-card,
 .output-card {
   background-color: white;
-  padding: 1.5rem; /* 24px */
+  padding: 1.5rem; 
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
-  margin-bottom: 2rem; /* 32px */
+  margin-bottom: 2rem; 
 }
 
 .config-title {
-  font-size: var(--font-large); /* 24px */
+  font-size: var(--font-large);
   font-weight: 600;
   color: var(--indigo-600);
-  margin-bottom: 1rem; /* 16px */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* ============================================
@@ -109,14 +232,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem; /* 24px */
+  gap: 1.5rem; 
 }
 
 .card-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 0.75rem; /* 12px */
+  margin-bottom: 0.75rem;
 }
 
 /* ============================================
@@ -129,14 +252,14 @@
 
 .input-label {
   display: block;
-  font-size: var(--font-small); /* 12px */
+  font-size: var(--font-small); 
   font-weight: 500;
   color: var(--gray-700);
-  margin-bottom: 0.25rem; /* 4px */
+  margin-bottom: 0.25rem; 
 }
 
 .input-group {
-  margin-bottom: 0.75rem; /* 12px */
+  margin-bottom: 0.75rem; 
   width: 100%;
   box-sizing: border-box;
 }
@@ -147,8 +270,8 @@ input[type="number"] {
   border: 1px solid var(--gray-300);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-sm);
-  padding: 0.5rem 0.75rem; /* 8px 12px */
-  font-size: var(--font-medium); /* 16px */
+  padding: 0.5rem 0.75rem;
+  font-size: var(--font-medium);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -168,7 +291,7 @@ input[type="number"]:focus {
 }
 
 .game-card {
-  padding: 1.5rem; /* 24px */
+  padding: 1.5rem;
   background-color: white;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
@@ -183,15 +306,16 @@ input[type="number"]:focus {
 }
 
 .game-card-title {
-  font-size: var(--font-large); /* 24px */
+  font-size: var(--font-large);
   font-weight: 700;
   color: var(--indigo-600);
-  margin-bottom: 0.75rem; /* 12px */
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .game-card-description {
   color: var(--gray-700);
-  font-size: var(--font-medium); /* 16px */
+  font-size: var(--font-medium);
   line-height: 1.6;
   margin: 0;
 }
@@ -201,7 +325,7 @@ input[type="number"]:focus {
    ============================================ */
 @media (min-width: 640px) {
   .app-container {
-    padding: 4rem 6rem; /* 64px 96px */
+    padding: 4rem 6rem;
   }
 
   .flex-row-container {
@@ -211,18 +335,18 @@ input[type="number"]:focus {
 
 @media (min-width: 1024px) {
   .app-container {
-    padding: 5rem 8rem; /* 80px 128px */
+    padding: 5rem 8rem;
   }
 }
 
 @media (min-width: 1280px) {
   .app-container {
-    padding: 6rem 10rem; /* 96px 160px */
+    padding: 6rem 10rem;
   }
 }
 
 @media (max-width: 639px) {
   .app-container {
-    padding: 2rem 1.5rem; /* 32px 24px */
+    padding: 2rem 1.5rem;
   }
 }

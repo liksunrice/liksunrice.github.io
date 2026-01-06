@@ -1,31 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
 :root {
-  /* Colors - Neutrals */
-  --gray-50: #f9fafb;
-  --gray-100: #f3f4f6;
-  --gray-200: #e5e7eb;
-  --gray-300: #d1d5db;
-  --gray-500: #6b7280;
-  --gray-700: #374151;
-  --gray-800: #1f2937;
+  /* Background Colors */
+  --bg-primary: #f3f4f6;
+  --bg-secondary: #f9fafb;
+  --bg-white: #ffffff;
 
-  /* Colors - Primary */
-  --indigo-500: #6366f1;
-  --indigo-600: #4f46e5;
-  --indigo-700: #4338ca;
+  /* Border Colors */
+  --border-light: #e5e7eb;
+  --border-medium: #d1d5db;
+  --border-hover: #9ca3af;
 
-  /* Colors - Accent */
-  --teal-500: #14b8a6;
-  --teal-600: #0d9488;
-  --green-400: #4ade80;
-  --green-600: #059669;
-  --blue-400: #60a5fa;
-  --blue-500: #3b82f6;
-  --yellow-300: #fcd34d;
-  --purple-500: #a855f7;
-  --red-100: #fee2e2;
-  --red-500: #ef4444;
-  --red-700: #b91c1c;
+  /* Text Colors */
+  --text-primary: #1f2937;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --text-muted-light: #9ca3af;
+
+  /* Primary Theme Colors */
+  --primary-base: #6366f1;
+  --primary-hover: #4f46e5;
+  --primary-active: #4338ca;
+  --primary-light: #e0e7ff;
+
+  /* Status Colors */
+  --success: #4ade80;
+  --success-dark: #059669;
+  --error-light: #fee2e2;
+  --error: #ef4444;
+  --error-dark: #b91c1c;
+
+  /* Focus/Input Colors */
+  --focus-blue: #3b82f6;
 
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -33,7 +38,7 @@
   --shadow-lg: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-  --ring-indigo: 0 0 0 3px rgba(99, 102, 241, 0.5);
+  --ring-primary: 0 0 0 3px rgba(99, 102, 241, 0.5);
 
   /* Border Radius */
   --radius-sm: 0.375rem;
@@ -59,7 +64,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--gray-100);
+  background-color: var(--bg-primary);
   min-height: 100vh;
   width: 100%;
 }
@@ -67,12 +72,12 @@
 .home-title {
   font-size: 3rem;
   font-weight:300;
-  color: var(--indigo-700);
+  color: var(--primary-active);
   text-align: center;
 }
 
 .home-title-footer {
-  color: var(--gray-500);
+  color: var(--text-muted);
   font-size: 2.75vmin;
   margin-top: -1.5rem;
 }
@@ -91,7 +96,7 @@
 }
 
 .dropdown-toggle {
-  color: var(--gray-700);
+  color: var(--text-secondary);
   font-size: var(--font-medium);
   background: none;
   border: none;
@@ -106,15 +111,15 @@
 }
 
 .dropdown-toggle:hover {
-  color: var(--indigo-600);
-  background-color: var(--gray-200);
+  color: var(--primary-hover);
+  background-color: var(--border-light);
 }
 
 .dropdown-arrow {
   font-size: 0.75rem;
   transition: transform 0.2s ease-in-out;
   display: inline-block;
-  color: var(--gray-500);
+  color: var(--text-muted);
 }
 
 .dropdown-arrow.open {
@@ -122,7 +127,7 @@
 }
 
 .dropdown:hover .dropdown-arrow {
-  color: var(--indigo-600);
+  color: var(--primary-hover);
 }
 
 .dropdown-menu {
@@ -130,7 +135,7 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(0);
-  background-color: white;
+  background-color: var(--bg-white);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
   min-width: 200px;
@@ -164,7 +169,7 @@
 
 .dropdown-item {
   display: block;
-  color: var(--gray-700);
+  color: var(--text-secondary);
   font-size: var(--font-small);
   text-decoration: none;
   padding: 0.75rem 1rem;
@@ -172,13 +177,13 @@
 }
 
 .dropdown-item:hover {
-  color: var(--indigo-600);
-  background-color: var(--gray-100);
+  color: var(--primary-hover);
+  background-color: var(--bg-primary);
 }
 
 .app-container {
   min-height: 100vh;
-  background-color: var(--gray-100);
+  background-color: var(--bg-primary);
   padding: 3rem 4rem;
   font-family: 'Roboto', sans-serif;
 }
@@ -193,10 +198,10 @@
 .main-title {
   font-size: var(--font-large);
   font-weight: 800;
-  color: var(--indigo-700);
+  color: var(--primary-active);
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem; 
-  border-bottom: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--border-light);
 }
 
 @media (min-width: 640px) {
@@ -210,7 +215,7 @@
    ============================================ */
 .config-card,
 .output-card {
-  background-color: white;
+  background-color: var(--bg-white);
   padding: 1.5rem; 
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
@@ -220,7 +225,7 @@
 .config-title {
   font-size: var(--font-large);
   font-weight: 600;
-  color: var(--indigo-600);
+  color: var(--primary-hover);
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -228,13 +233,6 @@
 /* ============================================
    Flex Layouts
    ============================================ */
-.flex-row-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem; 
-}
-
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -245,16 +243,11 @@
 /* ============================================
    Form Elements
    ============================================ */
-.input-wrapper {
-  flex: 1;
-  width: 100%;
-}
-
 .input-label {
   display: block;
   font-size: var(--font-small); 
   font-weight: 500;
-  color: var(--gray-700);
+  color: var(--text-secondary);
   margin-bottom: 0.25rem; 
 }
 
@@ -267,7 +260,7 @@
 input[type="number"] {
   display: block;
   width: 100%;
-  border: 1px solid var(--gray-300);
+  border: 1px solid var(--border-medium);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-sm);
   padding: 0.5rem 0.75rem;
@@ -277,47 +270,8 @@ input[type="number"] {
 
 input[type="number"]:focus {
   outline: none;
-  border-color: var(--indigo-500);
-  box-shadow: var(--ring-indigo);
-}
-
-/* ============================================
-   Home Page
-   ============================================ */
-.game-card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-.game-card {
-  padding: 1.5rem;
-  background-color: white;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-normal);
-  border: 2px solid transparent;
-}
-
-.game-card:hover {
-  box-shadow: var(--shadow-xl);
-  transform: translateY(-2px);
-  border-color: var(--indigo-500);
-}
-
-.game-card-title {
-  font-size: var(--font-large);
-  font-weight: 700;
-  color: var(--indigo-600);
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-
-.game-card-description {
-  color: var(--gray-700);
-  font-size: var(--font-medium);
-  line-height: 1.6;
-  margin: 0;
+  border-color: var(--primary-base);
+  box-shadow: var(--ring-primary);
 }
 
 /* ============================================
@@ -326,10 +280,6 @@ input[type="number"]:focus {
 @media (min-width: 640px) {
   .app-container {
     padding: 4rem 6rem;
-  }
-
-  .flex-row-container {
-    flex-direction: row;
   }
 }
 

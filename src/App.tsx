@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Connections from './projects/connections/Connections';
+import MemeMaker from './projects/memeMaker/memeMaker';
 
 const App: React.FC = () => {
   return (

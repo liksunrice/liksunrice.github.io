@@ -13,6 +13,8 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/connections" element={<Connections />} />
+        <Route path="/memeMaker" element={<MemeMaker />} />
+
       </Routes>
     </BrowserRouter>
   );

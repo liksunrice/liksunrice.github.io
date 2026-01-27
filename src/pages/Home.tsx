@@ -59,6 +59,9 @@ const Home: React.FC = () => {
                 <Link to="/connections" className="dropdown-item">
                   Connections Builder
                 </Link>
+                <Link to="/memeMaker" className="dropdown-item">
+                  Meme Maker
+                </Link>
               </div>
             )}
           </div>

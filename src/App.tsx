@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Connections from './projects/connections/Connections';
 import MemeMaker from './projects/memeMaker/memeMaker';
+import MangaOCR from './projects/mangaOCR/MangaOCR';
 
 const App: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/connections" element={<Connections />} />
         <Route path="/memeMaker" element={<MemeMaker />} />
-
+        <Route path="/mangaOCR" element={<MangaOCR />} />
       </Routes>
     </BrowserRouter>
   );

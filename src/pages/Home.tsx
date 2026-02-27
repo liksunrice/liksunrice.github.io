@@ -62,6 +62,9 @@ const Home: React.FC = () => {
                 <Link to="/memeMaker" className="dropdown-item">
                   Meme Maker
                 </Link>
+                <Link to="/mangaOCR" className="dropdown-item">
+                  Manga OCR
+                </Link>
               </div>
             )}
           </div>

@@ -3,8 +3,8 @@ import './MangaOCR.css';
 import { sortDetectionsManga } from './sortDetections';
 
 const env = (import.meta as any).env ?? {};
-const API_BASE: string = env.VITE_MANGA_OCR_API_BASE ?? 'http://0.0.0.0:8000';
-const API_KEY: string = env.VITE_MANGA_OCR_API_KEY ?? '123';
+// Public: base URL of your FastAPI backend
+const API_BASE: string = env.VITE_MANGA_OCR_API_BASE ?? 'http://127.0.0.1:8000';
 
 export type OcrBoxTuple = [number, number, number, number];
 
@@ -84,9 +84,6 @@ const MangaOCR: React.FC = () => {
       setIsLoading(true);
       const res = await fetch(`${API_BASE}/predict`, {
         method: 'POST',
-        headers: {
-          'X-API-Key': API_KEY,
-        },
         body: formData,
       });
 

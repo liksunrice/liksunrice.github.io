@@ -191,9 +191,9 @@ const MangaOCR: React.FC = () => {
 
   return (
     <div className="mangaocr-page">
-      <h1 className="mangaocr-title">Manga OCR v0.1.0</h1>
+      <h1 className="mangaocr-title">Manga OCR v0.2.0</h1>
 
-      <div className="mangaocr-layout">
+      <div className="mangaocr-layout"> 
         <div className="mangaocr-left">
           {imageUrl ? (
             <div className="mangaocr-imageWrapper">
